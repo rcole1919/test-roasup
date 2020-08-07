@@ -1,0 +1,5 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: (100% / 3) ((100% / 3) * 2);
+  grid-template-rows: 80px calc(100vh - 80px);
+}

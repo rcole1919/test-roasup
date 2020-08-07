@@ -1,0 +1,67 @@
+.nav {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  position: fixed;
+  top: 80px;
+
+  width: (100% / 3);
+  height: calc(100vh - 80px);
+  padding: 20px;
+  padding-left: 10px;
+
+  background-color: #05212A;
+  background-image: url("../img/shadow.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  color: #ffffff
+}
+
+.nav__title {
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav__info {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item-link {
+  position: relative;
+  display: block;
+  border-radius: 4px;
+  padding-left: 35px;
+
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.8);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 10px;
+
+    width: 17px;
+    height: 13px;
+
+    background-image: url("../img/icon-mail.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.nav__item-link--current {
+  background-color: #117FA3;
+  color: #ffffff;
+}

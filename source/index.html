@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test Roas-Up</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preload" href="fonts/open-sans-v17-latin-regular.woff2" as="font">
+    <link rel="preload" href="fonts/open-sans-v17-latin-700.woff2" as="font">
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <div class="profile">
+        <div class="profile__avatar">
+          <img src="img/avatar.jpg" width="40" height="40" alt="David Hill">
+        </div>
+        <div class="profile__info">
+          <div class="profile__name">
+            David Hill
+          </div>
+          <div class="profile__status">
+            online
+          </div>
+        </div>
+        <button class="profile__btn" type="button"></button>
+      </div>
+  
+      <div class="nav" id="nav">
+        <div class="nav__title">
+          Messages
+        </div>
+        <div class="nav__info">
+          history
+        </div>
+        <ul class="nav__list">
+          <nav-item 
+            v-for="item of sections" 
+            v-bind:add="item">
+          </nav-item>
+        </ul>
+        <button v-on:click="addSection" class="nav__add-item" type="button">Add section</button>
+      </div>
+  
+      <div class="messages" id="messages">
+        <div class="messages__header">
+          <div class="messages__title">
+            Questions Messenger
+          </div>
+          <select name="select" id="select" class="messages__select">
+            <option value="1" selected>All Questions<option>
+          </select>
+        </div>
+        <div class="messages__main">
+          <ul class="messages__list">
+            <message 
+              v-for="(item, i) of messages"
+              v-bind:index="i"
+              v-bind:add="item">
+            </message>
+          </ul>
+        </div>
+        <div class="messages__footer">
+          <textarea class="messages__new" name="new-message" id="new-message" placeholder="New message" v-model="title"></textarea>
+          <button v-on:click="addMessage" class="messages__add" type="button">Add message</button>
+        </div>
+      </div>
+    </div>
+
+    <template id="section">
+      <li class="nav__item">
+        <a href="#" class="nav__item-link">
+          <span>{{ add.name }}</span> <span>{{ add.count }}</span>
+        </a>
+      </li>
+    </template>
+
+    <template id="message">
+      <li class="messages__item message">
+        <div class="message__info">
+          <div class="message__number">
+            Q{{ index + 1 }}
+          </div>
+          <div class="message__status">
+            16h
+          </div>
+        </div>
+        <div class="message__body">
+          <p class="message__text">
+            {{ add.text }}
+          </p>
+          <div class="message__time">
+            <div class="message__user">
+              Guest
+            </div>
+            <div class="message__time-value">
+              {{ add.hours }}:{{ add.minutes }}
+            </div>
+          </div>
+        </div>
+        <div class="message__comments comments comments--none">
+          <div class="comments__avatar">
+            <img src="img/avatar.jpg" width="30" height="30" alt="User">
+          </div>
+          <div class="comments__count">1</div>
+          <button class="comments__add" type="button"aria-label="New comment"></button>
+        </div>
+      </li>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

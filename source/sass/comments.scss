@@ -1,0 +1,53 @@
+.comments {
+  width: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.comments__avatar {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.comments__count {
+  width: 27px;
+  height: 27px;
+  margin-bottom: 2px;
+  border: 1px solid #19BCF3;
+  border-radius: 50%;
+
+  text-align: center;
+  line-height: 27px;
+  color: #19BCF3;
+}
+
+.comments__add {
+  display: none;
+}
+
+.comments--none .comments__avatar {
+  display: none;
+}
+
+.comments--none .comments__count {
+  display: none;
+}
+
+.comments--none .comments__add {
+  display: block;
+  margin-left: auto;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 50%;
+
+  background-color: #FFFFFF;
+  background-image: url("../img/icon-plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
